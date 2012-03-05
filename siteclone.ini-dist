@@ -1,0 +1,4 @@
+siteclone_exclude[0] = "siteclone"
+siteclone_exclude[1] = "newsletter"
+siteclone_profile = "default"
+siteclone_template = "zimpleza"
