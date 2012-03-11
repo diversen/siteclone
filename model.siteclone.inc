@@ -118,7 +118,8 @@ class siteclone {
         $db = new db();
         $values = db::prepareToPost();
         $values['md5_key'] = $md5;
-        $values['password1'] = md5(html::specialDecode($values['password1']));
+        $values['password'] = md5(html::specialDecode($values['password1']));
+        unset($values['password1']);
         $db->insert('siteclone', $values);
         
         // send email
