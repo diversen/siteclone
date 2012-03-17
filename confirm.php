@@ -7,9 +7,9 @@
 </div>
 <?php
 
+template::setTitle(lang::translate('siteclone_confirm_html_title'));
 $clone = new siteclone();
 $row = $clone->getRowFromMD5($_GET['id']);
-print_r($row);
 $sitename = $row['sitename'];
 
 $sitename.= '.' . config::getMainIni('server_name');

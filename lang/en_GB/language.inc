@@ -18,7 +18,7 @@ $_COS_LANG_MODULE['siteclone_error_password_no_match'] = 'Passwords does not mat
 $_COS_LANG_MODULE['siteclone_error_invalid_email'] = 'Not a valid email';
 $_COS_LANG_MODULE['siteclone_error_incorrect_captcha'] = 'Please enter correct captcha';
 
-$_COS_LANG_MODULE['siteclone_email_subject'] = 'siteclone_email_subject';
+$_COS_LANG_MODULE['siteclone_email_subject'] = 'Creation of site';
 $_COS_LANG_MODULE['siteclone_no_such_id'] = 'siteclone_no_such_id';
 $_COS_LANG_MODULE['siteclone_already_validated'] = 'siteclone_already_validated';
 
