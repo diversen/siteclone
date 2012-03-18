@@ -22,13 +22,13 @@ $config_dir = _COS_PATH . "/config/multi/$servername";
 if (!file_exists($config_dir)) {    
     $res = @mkdir($config_dir);
     if (!$res) { 
-        $message = "Administer has ¤#¤%& up. Can not make dir.<br /> ";
-        $message.= "Ask him to set correct permissions<br />";
-        $message.= "e.g. ./coscli.sh file --chmod-files<br />";
-        die;
+        //$message = "Administer has ¤#¤%& up. Can not make config dir.\nAsk him to set correct permissions\ne.g. ./coscli.sh file --chmod-files\n";
+        $message = lang::translate('siteclone_rpc_can_not_make_dir');
+        die(nl2br($message));
     } else {
-        $message = "Created config dir<br />\n";
-        echo $message;
+        //$message = "Created config dir\n";
+        $message = lang::translate('siteclone_rpc_created_config_dir');
+        echo nl2br($message);
     } 
 }
 
@@ -46,20 +46,18 @@ $site_ini = _COS_PATH . "/config/multi/$servername/config.ini";
 
 // write ini string to file
 if (file_exists($site_ini)) {
-    $message = "Ini file already exists.\n";
-    $message.= "You site should already have created\n";
-    die($message);
+    $message = lang::translate('siteclone_rpc_ini_file_exists');
+    die(nl2br($message));
 } else {
     $res = file_put_contents($site_ini, $str);
     if (!$res) { 
-        $message = "Administer has #¤%!&¤ up<br />";
-        $message.= "Can not make ini file<br />\n"; 
-        $message.= "Ask him to set correct permissions with this command:<br />";
-        $message.= "./coscli.sh file --chmod-files";
-        die($message);
+        
+        $message = lang::translate('siteclone_rpc_could_not_make_ini_file');
+        die(nl2br($message));
     } else {
-        $message = "Config file has been created<br />\n";
-        echo $message;
+        
+        $message = lang::translate('siteclone_rpc_ini_file_created');
+        echo nl2br($message);
     }
 }
 
@@ -67,11 +65,12 @@ if (file_exists($site_ini)) {
 $db = new db();
 $res = $db->createDB($servername);
 if (!$res) {
-    $message = "Could not create database. Something is wrong.<br />\n";
+    $message = lang::translate('siteclone_rpc_could_not_make_database');
     cos_error_log($message);
-    die($message);
+    die(nl2br($message));
 } else {
-    $message = "Database has been created";
+    
+    $message = lang::translate('siteclone_rpc_database_created');
     echo $message;
 }
 
@@ -84,13 +83,13 @@ $command = "mysql -u" . config::$vars['coscms_main']['username'] .
 exec($command, $output = array(), $ret = null);
 
 if ($ret) {
-    $message = "Could not create base DB tables.";
-    $message.= "Something is not right!";
+    
+    $message = lang::translate('siteclone_rpc_could_not_make_base_tables');
     cos_error_log($message);
     die ($message);
-} else {
-    $message = "Base Tables created<br />";
-    echo $message;
+} else {  
+    $message = lang::translate('siteclone_rpc_base_tables_created');
+    echo nl2br($message);
 }
 
 // install all profile modules
@@ -101,11 +100,13 @@ exec ($command, $output, $ret);
 
 if ($ret) {
     // error in install
-    $message = "Could not install all modules. Site will not work!<br />\n";
+    
+    $message = lang::translate('siteclone_rpc_could_not_install_modules');
     cos_error_log($message);
-    die($message);
+    die(nl2br($message));
 } else {
-    $message = "All modules was installed<br />";
+    
+    $message = lang::translate('siteclone_rpc_all_modules_installed');
     echo $message;
 }
 
@@ -116,11 +117,13 @@ $command.= "./coscli.sh -d $servername template --set $template";
 
 exec ($command, $output, $ret);
 if ($ret) {
-    $message = "Could not set default template<br />";
-    echo $message;
+    
+    $message = lang::translate('siteclone_rpc_could_not_set_template');
+    die(nl2br($message));
 } else {
-    $message = "Default template has been set<br />\n";
-    echo $message;
+    
+    $message = lang::translate('siteclone_rpc_template_set');
+    echo nl2br($message);
 }
 
 // add super user
@@ -129,9 +132,11 @@ $command.= "./coscli.sh -d $servername useradd_direct --add-admin $row[email] $r
 exec ($command, $output, $ret);
 //print "Result create user = $ret";
 if ($ret) {
-    $message = "Could not create your suer user<br />\n";
+    $message = lang::translate('siteclone_rpc_could_not_make_user');
+    die(nl2br($message));
 } else {
-    $message = "Super User has been created<br />\n";
+    
+    $message = lang::translate('siteclone_rpc_user_created');
 }
 // created files dir
 $files_dir = _COS_PATH . "/htdocs/files/$servername";
@@ -140,8 +145,10 @@ if (!file_exists($files_dir)){
 }
 
 // confirmation go to login
-echo "You site has been build. You can now go to<br />\n";
+$message = lang::translate('siteclone_rpc_confirm_message');
+$message= lang::translate('siteclone_rpc_link_text');
+
 echo html::createLink(
         "http://$servername/account/login/index", 
-        "Login on your new site with email and password");
+        $message);
 die;

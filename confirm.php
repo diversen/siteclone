@@ -1,5 +1,11 @@
+<?php
+
+//$message = ;
+$message = lang::translate('siteclone_rpc_please_wait_message');
+
+?>
 <div id="progress">
-    <h3>Please Wait. This may take a minute or two ...</h3>
+    <h3><?=$message?></h3>
     <img src="/images/load.gif" width="16" />
 </div>
 <div id ="result">
@@ -8,6 +14,7 @@
 <?php
 
 template::setTitle(lang::translate('siteclone_confirm_html_title'));
+
 $clone = new siteclone();
 $row = $clone->getRowFromMD5($_GET['id']);
 $sitename = $row['sitename'];
