@@ -1,10 +1,11 @@
 <?php
 
+include_module ('siteclone');
 $clone = new siteclone();
 
 // check for correct id. 
 $row = $clone->getRowFromMD5($_GET['id']);
-if (!$row) {
+if (empty($row)) {
     echo lang::translate('siteclone_no_such_id');
     die;
 }
@@ -37,7 +38,7 @@ $ini = config::getIniFileArray(_COS_PATH . "/config/config.ini");
 $ini['url'] = "mysql:dbname=$servername;host=localhost";
 $ini['server_name'] = $servername;
 $ini['server_redirect'] = $servername;
-$ini['site_email'] = $row['email'];
+//$ini['site_email'] = $row['email'];
 $ini['domain'] = $servername;
 
 // ini array to string
@@ -71,7 +72,7 @@ if (!$res) {
 } else {
     
     $message = lang::translate('siteclone_rpc_database_created');
-    echo $message;
+    echo nl2br($message);
 }
 
 // load base SQL
@@ -107,7 +108,7 @@ if ($ret) {
 } else {
     
     $message = lang::translate('siteclone_rpc_all_modules_installed');
-    echo $message;
+    echo nl2br($message);
 }
 
 // set template
@@ -135,8 +136,8 @@ if ($ret) {
     $message = lang::translate('siteclone_rpc_could_not_make_user');
     die(nl2br($message));
 } else {
-    
     $message = lang::translate('siteclone_rpc_user_created');
+    echo nl2br($message);
 }
 // created files dir
 $files_dir = _COS_PATH . "/htdocs/files/$servername";

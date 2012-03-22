@@ -1,5 +1,9 @@
 <?php
 
+
+template::setTitle(lang::translate('siteclone_clone_site_html_title'));
+template::setMeta(array('description' => lang::translate('siteclone_site_meta_desc')));
+
 http::prg();
 $clone = new siteclone();
 if (!empty($_POST)) {   

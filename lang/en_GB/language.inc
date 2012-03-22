@@ -25,7 +25,7 @@ $_COS_LANG_MODULE['siteclone_already_validated'] = 'siteclone_already_validated'
 $_COS_LANG_MODULE['siteclone_confirm_email'] = 'An email has been sent, please check your mailbox in a few minutes for futher instructions';
 $_COS_LANG_MODULE['siteclone_confirm_email_error'] = 'An error was encountered while trying to send an email. Please try to create a new site later';
 
-$_COS_LANG_MODULE['siteclone_confirm_html_title'] = 'siteclone_confirm_html_title';
+$_COS_LANG_MODULE['siteclone_confirm_html_title'] = 'Confirm site creation';
 $_COS_LANG_MODULE['siteclone_rpc_created_config_dir'] = "Created config dir\n";
 $_COS_LANG_MODULE['siteclone_rpc_ini_file_exists'] = "Ini file already exists.\n";
 
@@ -86,3 +86,7 @@ $_COS_LANG_MODULE['siteclone_rpc_link_text'] = $message;
 //"Administer has ¤#¤%& up. Can not make config dir.\nAsk him to set correct permissions\ne.g. ./coscli.sh file --chmod-files\n"
 $_COS_LANG_MODULE['siteclone_rpc_please_wait_message'] = 'Please Wait. This may take a minute or two ...';
 $_COS_LANG_MODULE['siteclone_rpc_can_not_make_dir'] = "Administer has ¤#¤%& up. Can not make config dir.\nAsk him to set correct permissions\ne.g. ./coscli.sh file --chmod-files\n";
+
+$_COS_LANG_MODULE['siteclone_clone_site_html_title'] = 'Opret gratis website';
+
+$_COS_LANG_MODULE['siteclone_site_meta_desc'] = 'Simple and userfriendly CMS - For free!';
