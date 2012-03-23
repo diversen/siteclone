@@ -12,6 +12,12 @@ class siteclone {
         
         $form->formStartAry(array ('id' => 'siteclone_form'));
         $form->legend(lang::translate('siteclone_legend'));
+        
+        $conditions = lang::translate('siteclone_label_accept_conditions');
+        $link = html::createLink('/siteclone/accept_conditions', lang::translate('siteclone_link_text_conditions'));
+        $conditions.= " " . $link;
+        $form->label('conditions', $conditions, $options);
+        $form->checkbox('conditions', 0, array());
         $form->label('sitename', lang::translate('siteclone_label_sitename'), $options);
         $form->text('sitename');
         $form->label('email', lang::translate('siteclone_label_email'), $options);
@@ -69,6 +75,10 @@ class siteclone {
     
     public $errors = array ();
     public function validate () {
+        if (!isset($_POST['conditions'])) {
+            $this->errors['conditions'] = lang::translate('siteclone_error_accept_conditions');
+        }
+        
         if (strlen($_POST['sitename']) < 5){
             $this->errors['sitename_length'] = lang::translate('siteclone_error_sitename_length');
         }
@@ -117,6 +127,7 @@ class siteclone {
         db::$dbh->beginTransaction();
         $db = new db();
         $values = db::prepareToPost();
+        unset($values['conditions']);
         $values['md5_key'] = $md5;
         $values['password'] = md5(html::specialDecode($values['password1']));
         unset($values['password1']);

@@ -92,3 +92,13 @@ $_COS_LANG_MODULE['siteclone_rpc_can_not_make_dir'] = "Kunne ikke oprettet konfi
 $_COS_LANG_MODULE['siteclone_clone_site_html_title'] = 'Opret gratis website';
 
 $_COS_LANG_MODULE['siteclone_site_meta_desc'] = 'Simple og brugervenligt CMS - ganske gratis!';
+
+$_COS_LANG_MODULE['siteclone_initial_conditions_config_title'] = 'Indtast krav der skal accepteres, når klient opretter site';
+$_COS_LANG_MODULE['siteclone_initial_conditions'] = '';
+
+$_COS_LANG_MODULE['siteclone_config_description'] = 'Konfiguration for oprettelse af site';
+
+$_COS_LANG_MODULE['siteclone_label_accept_conditions'] = 'Jeg har læst og accepteret betingelserne';
+$_COS_LANG_MODULE['siteclone_link_text_conditions'] = 'Læs betingelserne her';
+
+$_COS_LANG_MODULE['siteclone_error_accept_conditions'] = 'Du skal acceptere betingelserne';

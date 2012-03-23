@@ -34,7 +34,9 @@ if (!file_exists($config_dir)) {
 }
 
 // create ini array
-$ini = config::getIniFileArray(_COS_PATH . "/config/config.ini");
+$ini = config::getIniFileArray(_COS_PATH . "/config/config.ini", true);
+//print_r($ini);
+unset($ini['development']); //print_r($ini); die;
 $ini['url'] = "mysql:dbname=$servername;host=localhost";
 $ini['server_name'] = $servername;
 $ini['server_redirect'] = $servername;

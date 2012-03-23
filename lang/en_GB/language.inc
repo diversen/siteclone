@@ -90,3 +90,6 @@ $_COS_LANG_MODULE['siteclone_rpc_can_not_make_dir'] = "Administer has ¤#¤%& up
 $_COS_LANG_MODULE['siteclone_clone_site_html_title'] = 'Opret gratis website';
 
 $_COS_LANG_MODULE['siteclone_site_meta_desc'] = 'Simple and userfriendly CMS - For free!';
+
+$_COS_LANG_MODULE['siteclone_initial_conditions_config_title'] = 'siteclone_initial_conditions_config_title';
+$_COS_LANG_MODULE['siteclone_initial_conditions'] = 'siteclone_initial_conditions';
