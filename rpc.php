@@ -1,5 +1,8 @@
 <?php
 
+ignore_user_abort(true);
+set_time_limit(0);
+
 include_module ('siteclone');
 $clone = new siteclone();
 
@@ -57,8 +60,7 @@ if (file_exists($site_ini)) {
         
         $message = lang::translate('siteclone_rpc_could_not_make_ini_file');
         die(nl2br($message));
-    } else {
-        
+    } else {        
         $message = lang::translate('siteclone_rpc_ini_file_created');
         echo nl2br($message);
     }

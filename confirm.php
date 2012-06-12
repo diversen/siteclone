@@ -19,12 +19,10 @@ $clone = new siteclone();
 
 ?>
 <script type="text/javascript">
-    $.get('/siteclone/rpc?id=<?=htmlspecialchars($_GET['id'])?>', function(data) {
-  $('#result').html(data);
-  $('#progress').hide();
+$.get('/siteclone/rpc?id=<?=htmlspecialchars($_GET['id'])?>', function(data) {
+    $('#result').html(data);
+    $('#progress').hide();
 });
 </script>
 
 <?php
-
- 
