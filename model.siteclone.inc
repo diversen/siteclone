@@ -66,7 +66,6 @@ class siteclone {
     public function emailExist () {
         $db = new db();
         $row = $db->selectOne('siteclone', 'email', $_POST['email']);
-        //print_r($row); die;
         if (!empty($row)) {
             return true;
         }
