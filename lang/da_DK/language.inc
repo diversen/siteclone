@@ -62,7 +62,7 @@ $message = "Kunne ikke installere moduler!\n";
 
 $_COS_LANG_MODULE['siteclone_rpc_could_not_install_modules'] = $message;
 
-$message = "All moduler blev installeret\n";
+$message = "Alle moduler blev installeret\n";
 
 $_COS_LANG_MODULE['siteclone_rpc_all_modules_installed'] = $message;
 
@@ -102,3 +102,5 @@ $_COS_LANG_MODULE['siteclone_label_accept_conditions'] = 'Jeg har læst og accep
 $_COS_LANG_MODULE['siteclone_link_text_conditions'] = 'Læs betingelserne her';
 
 $_COS_LANG_MODULE['siteclone_error_accept_conditions'] = 'Du skal acceptere betingelserne';
+
+$_COS_LANG_MODULE['siteclone_site_created_final_message'] = 'Dit website er oprettet!';

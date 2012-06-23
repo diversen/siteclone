@@ -91,5 +91,13 @@ $_COS_LANG_MODULE['siteclone_clone_site_html_title'] = 'Opret gratis website';
 
 $_COS_LANG_MODULE['siteclone_site_meta_desc'] = 'Simple and userfriendly CMS - For free!';
 
-$_COS_LANG_MODULE['siteclone_initial_conditions_config_title'] = 'siteclone_initial_conditions_config_title';
-$_COS_LANG_MODULE['siteclone_initial_conditions'] = 'siteclone_initial_conditions';
+$_COS_LANG_MODULE['siteclone_initial_conditions_config_title'] = 'Enter site conditions - will be used in connection with a check box';
+$_COS_LANG_MODULE['siteclone_initial_conditions'] = 'I have read and understood the conditions';
+
+$_COS_LANG_MODULE['siteclone_config_description'] = 'Siteclone configuration';
+
+
+$_COS_LANG_MODULE['siteclone_label_accept_conditions'] = 'Accept conditions';
+$_COS_LANG_MODULE['siteclone_link_text_conditions'] = 'Read conditions';
+$_COS_LANG_MODULE['siteclone_error_accept_conditions'] = 'You will have to accept the conditions';
+$_COS_LANG_MODULE['siteclone_site_created_final_message'] = 'Your site has been created!';

@@ -4,8 +4,8 @@ For at fuldføre oprettelsen af dit nye site skal du trykke på det følgende li
 
 <?=$vars['confirm_link'] ?>
 
-Linket vil tage dig selve oprettelses processen. 
+Linket vil tage dig til oprettelses processen. 
 
-Dette kan tage op til et minut, så hav en vis form for tålmodighed!
+Dette kan tage op til et minut, så hav tålmodighed!
 
 Vh <?=$vars['sender_site']?>

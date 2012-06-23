@@ -149,6 +149,9 @@ if (!file_exists($files_dir)){
     @mkdir($files_dir);
 }
 
+$message = lang::translate('siteclone_site_created_final_message');
+echo "<b>$message</b><br />\n";
+
 // confirmation go to login
 $message = lang::translate('siteclone_rpc_confirm_message');
 $message= lang::translate('siteclone_rpc_link_text');
