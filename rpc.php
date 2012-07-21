@@ -42,6 +42,7 @@ $ini = config::getIniFileArray(_COS_PATH . "/config/config.ini", true);
 unset($ini['development']); //print_r($ini); die;
 $ini['url'] = "mysql:dbname=$servername;host=localhost";
 $ini['server_name'] = $servername;
+$ini['server_name_master'] = $servername;
 $ini['server_redirect'] = $servername;
 //$ini['site_email'] = $row['email'];
 $ini['domain'] = $servername;
