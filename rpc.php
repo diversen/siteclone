@@ -134,7 +134,7 @@ if ($ret) {
 
 // add super user
 $command = "cd " . _COS_PATH  .' && ';
-$command.= "./coscli.sh -d $servername useradd_direct --add-admin $row[email] $row[password]";
+$command.= "./coscli.sh -d $servername useradd-direct --add-admin $row[email] $row[password]";
 exec ($command, $output, $ret);
 //print "Result create user = $ret";
 if ($ret) {
