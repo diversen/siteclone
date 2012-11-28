@@ -26,7 +26,7 @@ class siteclone {
         $form->password('password1');
         $form->label('password2', lang::translate('siteclone_label_password2'), $options);
         $form->password('password2');
-        $form->label('captcha', captcha::createCaptcha(), $options);
+        $form->label('captcha', captcha::createCaptcha());
         $form->text('captcha');
         $form->label('submit');
         $form->submit('submit', lang::translate('siteclone_submit_text'));
