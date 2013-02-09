@@ -72,7 +72,7 @@ $db = new db();
 $res = $db->createDB($servername);
 if (!$res) {
     $message = lang::translate('siteclone_rpc_could_not_make_database');
-    cos_error_log($message);
+    log::error($message);
     die(nl2br($message));
 } else {
     
@@ -91,7 +91,7 @@ exec($command, $output = array(), $ret = null);
 if ($ret) {
     
     $message = lang::translate('siteclone_rpc_could_not_make_base_tables');
-    cos_error_log($message);
+    log::error($message);
     die ($message);
 } else {  
     $message = lang::translate('siteclone_rpc_base_tables_created');
@@ -108,13 +108,14 @@ if ($ret) {
     // error in install
     
     $message = lang::translate('siteclone_rpc_could_not_install_modules');
-    cos_error_log($message);
+    log::error($message);
     die(nl2br($message));
 } else {
     
     $message = lang::translate('siteclone_rpc_all_modules_installed');
     echo nl2br($message);
 }
+
 
 // set template
 $template = config::getModuleIni('siteclone_template');

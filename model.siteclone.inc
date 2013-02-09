@@ -139,9 +139,10 @@ class siteclone {
             'sender_site' => self::getSiteName()
         );
         $subject = lang::translate('siteclone_email_subject');
-        $email = templateView::get('siteclone', "lang/$lang/confirm_email", $vars);
+        $email = view::get('siteclone', "lang/$lang/confirm_email", $vars);
+    
         
-        if (mail_utf8($_POST['email'], $subject, $email)){
+        if (cosMail::text($_POST['email'], $subject, $email)){
             db::$dbh->commit();
             return true;
         } else {
