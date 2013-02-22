@@ -6,6 +6,7 @@ is provided a clone link.
 
 When the user press the link the new site is created. 
 
+
 ### Config
 
     ; modules which should not be installed in the clone process
