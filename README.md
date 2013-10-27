@@ -27,9 +27,9 @@ When the user press the link the new site is created.
 	    # Indexes + Directory Root.
 	    Include /home/dennis/apache.conf
 	    DirectoryIndex index.php
-	    DocumentRoot /home/dennis/www/os-cms.dk/htdocs
+	    DocumentRoot /home/dennis/www/coscms.org/htdocs
 	  
-	    <Directory /home/dennis/www/os-cms.dk/htdocs>
+	    <Directory /home/dennis/www/coscms.org/htdocs>
 	        RewriteEngine on
 	        RewriteBase /
 	        RewriteCond %{REQUEST_FILENAME} !-f
@@ -37,7 +37,7 @@ When the user press the link the new site is created.
 	        RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]
 	    </Directory>
 	   
-	    ErrorLog  /home/dennis/www/os-cms.dk/logs/error.log
-	    CustomLog /home/dennis/www/os-cms.dk/logs/access.log combined
+	    ErrorLog  /home/dennis/www/coscms.org/logs/error.log
+	    CustomLog /home/dennis/www/coscms.org/logs/access.log combined
 	</VirtualHost>
 
