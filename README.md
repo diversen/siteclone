@@ -17,3 +17,27 @@ When the user press the link the new site is created.
     ; the default template
     siteclone_template = "zimpleza"
 
+### Apache2 virtual host example
+
+	<VirtualHost *:80>
+	    ServerAdmin webmaster@example.com
+	    ServerName  coscms.org
+	    ServerAlias *.coscms.org
+	
+	    # Indexes + Directory Root.
+	    Include /home/dennis/apache.conf
+	    DirectoryIndex index.php
+	    DocumentRoot /home/dennis/www/os-cms.dk/htdocs
+	  
+	    <Directory /home/dennis/www/os-cms.dk/htdocs>
+	        RewriteEngine on
+	        RewriteBase /
+	        RewriteCond %{REQUEST_FILENAME} !-f
+	        RewriteCond %{REQUEST_FILENAME} !-d
+	        RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]
+	    </Directory>
+	   
+	    ErrorLog  /home/dennis/www/os-cms.dk/logs/error.log
+	    CustomLog /home/dennis/www/os-cms.dk/logs/access.log combined
+	</VirtualHost>
+
