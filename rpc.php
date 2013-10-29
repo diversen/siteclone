@@ -40,10 +40,11 @@ if (!file_exists($config_dir)) {
 $ini = config::getIniFileArray(_COS_PATH . "/config/config.ini", true);
 //print_r($ini);
 unset($ini['development']); //print_r($ini); die;
-$ini['url'] = "mysql:dbname=$servername;host=localhost";
+$ini['url'] = "mysql:dbname=$servername;host=localhost;charset=utf8";
 $ini['server_name'] = $servername;
 $ini['server_name_master'] = $servername;
 $ini['server_redirect'] = $servername;
+$init['db_init'] = "SET NAMES utf8";
 //$ini['site_email'] = $row['email'];
 $ini['domain'] = $servername;
 
