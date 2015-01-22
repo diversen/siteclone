@@ -1,13 +1,14 @@
 <?php
 
-include_once "coslib/captcha.php";
-include_once "coslib/random.php";
+use diversen\captcha;
+use diversen\random;
+use diversen\valid as cosValidate;
 
 class siteclone {
     
     public function form () {        
         $options = array ('required' => true);
-        $form = new HTML();
+        $form = new html();
         $form->init(array(), 'submit');
         
         $form->formStartAry(array ('id' => 'siteclone_form'));
@@ -35,7 +36,7 @@ class siteclone {
     }
     
     public function confirmForm () {
-        $form = new HTML();
+        $form = new html();
         $form->formStartAry(array ('id' => 'siteclone_form'));
         $form->legend(lang::translate('siteclone_confirm_legend'));       
         $options = array ('required' => true);
@@ -51,10 +52,12 @@ class siteclone {
         $domain = $domain . '.' . config::getMainIni('server_name');
         $file = _COS_PATH . "/config/multi/$domain/config.ini";
         $res = file_exists($file);
-        if ($res) return true;
+        if ($res) { 
+            return true;
+        }
         $db = new db();
         $row = $db->selectOne('siteclone', 'sitename', $_POST['sitename']);
-        //print_r($row); die;
+
         if (!empty($row)) {
             return true;
         }

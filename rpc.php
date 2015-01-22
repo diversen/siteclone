@@ -9,13 +9,13 @@ $clone = new siteclone();
 // check for correct id. 
 $row = $clone->getRowFromMD5($_GET['id']);
 if (empty($row)) {
-    echo lang::translate('siteclone_no_such_id');
+    echo lang::translate('ID does not exists in database. Request was canceled!');
     die;
 }
 
 // already verified
 if ($row['verified'] == 1) {
-    echo lang::translate('siteclone_already_validated');
+    echo lang::translate('Domænet er allerede verificeret');
     die;
 }
 
@@ -26,8 +26,8 @@ $config_dir = _COS_PATH . "/config/multi/$servername";
 if (!file_exists($config_dir)) {    
     $res = @mkdir($config_dir);
     if (!$res) { 
-        //$message = "Administer has ¤#¤%& up. Can not make config dir.\nAsk him to set correct permissions\ne.g. ./coscli.sh file --chmod-files\n";
-        $message = lang::translate('siteclone_rpc_can_not_make_dir');
+        $message = "System error. No access to write to dir ($config_dir)";
+        log::error($message);
         die(nl2br($message));
     } else {
         //$message = "Created config dir\n";
