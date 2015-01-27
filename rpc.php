@@ -3,7 +3,7 @@
 ignore_user_abort(true);
 set_time_limit(0);
 
-include_module ('siteclone');
+moduleloader::includeModule('siteclone');
 $clone = new siteclone();
 
 // check for correct id. 
